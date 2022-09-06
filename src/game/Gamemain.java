@@ -8,14 +8,18 @@ public class Gamemain {
 		Scanner scanner = new Scanner(System.in);
 		player player = new player();
 		map map = new map();
+		story story = new story();
 		
 		System.out.println("Hello Adventurer what is your name? ");
 		player.name = scanner.nextLine().trim();
 		System.out.println("Welcome " + player.name + " to the land of QASMT.");
+		// Init the locations
+		story.init();
 		// Game loop
 		while (player.alive || !(player.gameFinished)) {
-			map.printMap();
+			//map.printMap();
 			player.action();
+			story.readStory(map.currentLevel, player.playerLocation[0], player.playerLocation[1]);
 		}
 		scanner.close();
 	}

@@ -9,8 +9,8 @@ public class story {
 	public void init() {
 		// Create the hash map and add the things to it
 				// Format: [Level#] [x] [y]
-				storyLocations.put("0 0 0", "Start of the game intro placeholder");
-				storyLocations.put("Germany", "Berlin");
+				storyLocations.put("0 0 0", "It's Mondays morning 7:00 am, no one is at school yet.\nYour english assignment is due and it makes up a solid 60% of your grade.\nYou have finished it but you don't have a printer at home.\nYou enter the research centre in hopes to print it but when you try to print, and error that makes your blood run cold appears.\nNO PAPER");
+				storyLocations.put("0 1 0", "Berlin");
 				storyLocations.put("Norway", "Oslo");
 				storyLocations.put("USA", "Washington DC");
 	}

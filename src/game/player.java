@@ -36,8 +36,12 @@ public class player {
 				case "walk":
 				case "travel":
 					// Need to fix so player can't go out of bounds
-					if(commands[1].toLowerCase() == "east") { movement(1, 0);}
-					else if (commands[1].toLowerCase() == "west") { movement(-1, 0);}
+					if(commands[1].toLowerCase().equals("east")) { 
+						movement(1, 0);
+						}
+					else if (commands[1].toLowerCase().equals("east")) {
+						movement(-1, 0);
+						}
 					break;
 				// Interaction
 				case "grab":
@@ -62,6 +66,9 @@ public class player {
 					}
 					
 					break;
+				case "help":
+					System.out.println("Avalible commands:\n\t Go\n\tGrab\n\nUse");
+					break;
 				default:
 					System.out.println("You can't do " + commands[0]);
 					break;
@@ -79,6 +86,7 @@ public class player {
 	}
 	// Moving the location of the player
 	private void movement(int x, int y) {
+		System.out.println("Called");
 		if (x != 0) {
 			playerLocation[0] += x;
 		}

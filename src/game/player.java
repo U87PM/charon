@@ -87,6 +87,7 @@ public class player {
 					
 					break;
 				case "help":
+					// Finish of this area with all the commands
 					System.out.println("Avalible commands:\n\t Go\n\tGrab\n\nUse");
 					break;
 				default:
@@ -109,10 +110,12 @@ public class player {
 		if (x != 0 && x < map[0].length && x > 0) {
 			playerLocation[0] += x;
 		}else {
-			System.out.println("You can't walk off the map");
+			System.out.println("You can't walk off the out of the school you have a assignment to hand in.");
 		}
 		if (y != 0 && y < map.length && y > 0) {
 			playerLocation[1] += y;
+		}else {
+			System.out.println("You can't walk off the out of the school you have a assignment to hand in.");
 		}
 	} 
 	
@@ -120,9 +123,12 @@ public class player {
 		String temp = "";
 		for (int i = 0; i < inventory.length; i++) {
 			if (inventory[i] != null) {
-				temp.concat(inventory[i]);
+				temp = temp.concat(inventory[i]);
 			}
 			
+		}
+		if (temp.equals("")) {
+			temp = "Seems like you are traveling light.";
 		}
 		return temp;
 		

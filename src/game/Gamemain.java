@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Gamemain {
 
 	public static void main(String[] args) {
-		// TODO Fix player movement cuz its very scuffed
 		Scanner scanner = new Scanner(System.in);
 		player player = new player();
 		map map = new map();

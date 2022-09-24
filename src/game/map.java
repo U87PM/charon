@@ -49,7 +49,7 @@ public class map {
 	}
 	
 	// Returns what the map level is
-	private char[][] returnLevel() {
+	public char[][] returnLevel() {
 		switch(currentLevel) {
 		case 0:
 			return level0;

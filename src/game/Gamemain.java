@@ -1,5 +1,4 @@
 package game;
-import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Gamemain {
@@ -21,17 +20,11 @@ public class Gamemain {
 			story.readStory(map.currentLevel, player.playerLocation[0], player.playerLocation[1]);
 			//map.printMap();
 			player.action();
-			printSpecial();
-			System.out.println(String.valueOf(player.playerLocation[0]) + String.valueOf(player.playerLocation[1]));
+			player.map = map.returnLevel();
+			System.out.println("Player at " + String.valueOf(player.playerLocation[0]) + " " + String.valueOf(player.playerLocation[1]));
 			
 		}
 		scanner.close();
-	}
-	
-	public static void printSpecial() {
-		PrintWriter printWriter = new PrintWriter(System.out,true);
-		printWriter.println("aa = 💣");
-
 	}
 
 }

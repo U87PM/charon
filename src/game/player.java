@@ -9,6 +9,8 @@ public class player {
 	public int playerLevel = 0;
 	public int[] playerLocation = {0,0};
 	
+	public char[][] map;
+	
 	public String[] inventory = new String[25];
 	
 	public boolean alive = true;
@@ -39,9 +41,19 @@ public class player {
 					if(commands[1].toLowerCase().equals("east")) { 
 						movement(1, 0);
 						}
-					else if (commands[1].toLowerCase().equals("east")) {
+					else if (commands[1].toLowerCase().equals("west")) {
 						movement(-1, 0);
 						}
+					else if (commands[1].toLowerCase().equals("north")) {
+						movement(0, 1);
+						}
+					else if (commands[1].toLowerCase().equals("south")) {
+						movement(0, -1);
+						}
+					else {
+						System.out.println("You can't go " + commands[1]);
+					}
+					
 					break;
 				// Interaction
 				case "grab":
@@ -49,7 +61,15 @@ public class player {
 					// Need to make a function to return items around
 					String[] environment = {"knife", "glock"};
 					if (Arrays.stream(environment).anyMatch(commands[1]::equals)) {
-						System.out.println("nice");
+						System.out.println("You grab " + commands[1] + " from the ground and put it in your inventory.");
+						int temp = 0;
+						for (int i = 0; i < inventory.length - 1; i++) {
+							if (inventory[i] == null) {
+								temp = i;
+								break;
+							};
+						}
+						inventory[temp] = commands[1];
 					}else {
 						System.out.println("You can't grab " + commands[1]+ " out of thin air.");
 					}
@@ -86,11 +106,12 @@ public class player {
 	}
 	// Moving the location of the player
 	private void movement(int x, int y) {
-		System.out.println("Called");
-		if (x != 0) {
+		if (x != 0 && x < map[0].length && x > 0) {
 			playerLocation[0] += x;
+		}else {
+			System.out.println("You can't walk off the map");
 		}
-		if (y != 0) {
+		if (y != 0 && y < map.length && y > 0) {
 			playerLocation[1] += y;
 		}
 	} 

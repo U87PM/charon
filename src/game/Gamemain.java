@@ -2,6 +2,7 @@ package game;
 import java.util.Scanner;
 
 public class Gamemain {
+	// TODO Finish off story
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

@@ -86,19 +86,23 @@ public class player {
 					}
 					
 					break;
-				case "help":
-					// Finish of this area with all the commands
-					System.out.println("Avalible commands:\n\t Go\n\tGrab\n\nUse");
-					break;
 				default:
 					System.out.println("You can't do " + commands[0]);
 					break;
 				}
 			}
 		}else {
-			if (commands[0].equals("inventory")) {
+			if (commands[0].equalsIgnoreCase("inventory")) {
 				System.out.println(returnInventory());
-			}else {
+			}else if (commands[0].equalsIgnoreCase("help")) {
+				// Finish of this area with all the commands
+				System.out.println("Avalible commands:"
+						+ "\n\t Go"
+						+ "\n\tGrab"
+						+ "\n\nUse"
+						);
+			}
+			else {
 				System.out.println("I don't know what " + commands[0]+ " means.");
 			}
 		}
